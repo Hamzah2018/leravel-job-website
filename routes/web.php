@@ -21,4 +21,4 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-//Route::get('/home',[homeController::class,'homef']);
+Route::get('/home',[homeController::class,'homef']);
