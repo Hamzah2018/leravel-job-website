@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="assests/imges/job1.jpg" class="d-block w-100" alt="...">
+          <img src="../../assests/imges/job1.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>In Office</h5>
             <p>Some representative placeholder content for the second slide.</p>
