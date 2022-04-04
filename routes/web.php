@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\homeController;
+use App\Http\Controllers\jobsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,6 @@ Route::get('/', function () {
 
 // Route::get('/home', function () {
 //     return view('home');
-// });
-Route::get('/home',[homeController::class,'homef']);
+// });             //homeController
+Route::get('/home',[homeController::class,'homef'])->name('home');
+Route::get('/job',[jobsController::class,'jobs'])->name('job');

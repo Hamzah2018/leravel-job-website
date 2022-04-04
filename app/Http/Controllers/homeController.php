@@ -8,6 +8,6 @@ class homeController extends Controller
 {
     //
     public function homef(){
-        $this->view('home');
+        return view('home');
     }
 }
