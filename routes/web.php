@@ -39,3 +39,5 @@ Route::get('/protfile',[protfileDashController::class,'protfile'])->name('protfi
 Route::get('/qual',[QualificationDashController::class,'qualifica'])->name('qual');
 Route::get('/skills',[skillsDashController::class,'skill'])->name('skills');
 Route::get('/view_jobs',[JobController::class,'viewJobs']);
+Route::get('/job_add',[JobController::class,'addJobs']);
+Route::post('/job_add',[JobController::class,'addJobs']);

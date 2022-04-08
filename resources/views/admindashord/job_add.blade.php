@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Job</title>
+</head>
+<body>
+<form action="job_add" method="POST">
+    @csrf
+    {{-- {{ csrf_field()}} --}}
+    job name :<input type="text" name="name">
+</br>
+ job descrip :<input type="text" name="descrip">
+</br>
+ <input type="submit" value="Add job">
+
+</form>
+</body>
+</html>
+
+
+{{-- <!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -487,4 +510,4 @@
 
 </body>
 
-</html>
+</html> --}}

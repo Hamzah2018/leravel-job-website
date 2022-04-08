@@ -12,5 +12,22 @@ class JobController extends Controller
         $arr = Array('job'=>$job);
         return view('admindashord.view_jobs',$arr);
     }
+    public function addJobs(Request $request){
+
+        if($request->isMethod('post')){
+                // ش  echo $request;
+             $newjob = new Job();
+
+            // $newjob->job_name->$request->input('name');
+            $newjob->job_name->$request->input('name');
+            $newjob->job_descrip->$request->input('descrip');
+            $newjob->save();
+
+            // job_name
+        }
+        // $job = Job::all();
+        // $arr = Array('job'=>$job);
+        return view('admindashord.job_add');
+    }
 }
 ?>

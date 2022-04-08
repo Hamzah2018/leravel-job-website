@@ -10,5 +10,7 @@ class jobsController extends Controller
     public function viewJob(){
         return view('pages.job');
     }
+
+
 }
 
