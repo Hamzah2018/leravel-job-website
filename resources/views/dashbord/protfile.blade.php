@@ -43,7 +43,7 @@
                </div>
                <div class="modal-body">
                  <img src="../../assests/imges/profile.png" alt="">
-                 <form>
+                 <form action="add_profile" method="POST">
                     <div class="mb-3">
                       <label for="exampleInputEmail1"  class="form-label">Email address</label>
                       <input type="email" placeholder="khalid@hotmail.com" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

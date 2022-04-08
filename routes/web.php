@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\JobController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\jobsController;
 use App\Http\Controllers\protfileDashController;
@@ -20,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('master');
     });
+Route::get('/jobslist', function () {
+        return view('admindashord.jobslist');
+    });
 
 
 // Route::get('/', function () {
@@ -34,3 +38,4 @@ Route::get('/job',[jobsController::class,'jobs'])->name('job');
 Route::get('/protfile',[protfileDashController::class,'protfile'])->name('protfile');
 Route::get('/qual',[QualificationDashController::class,'qualifica'])->name('qual');
 Route::get('/skills',[skillsDashController::class,'skill'])->name('skills');
+Route::get('/view_jobs',[JobController::class,'viewJobs']);
