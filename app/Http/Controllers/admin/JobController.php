@@ -16,18 +16,29 @@ class JobController extends Controller
 
         if($request->isMethod('post')){
                 // ش  echo $request;
-             $newjob = new Job();
-
+            $newjob = new Job();
             // $newjob->job_name->$request->input('name');
-            $newjob->job_name->$request->input('name');
-            $newjob->job_descrip->$request->input('descrip');
+            $newjob->job_name = $request->input('name');
+            $newjob->job_descrip = $request->input('descrip');
             $newjob->save();
-
             // job_name
         }
         // $job = Job::all();
         // $arr = Array('job'=>$job);
         return view('admindashord.job_add');
+    }
+    public function editJobs(Request $request,$id){
+        if($request->isMethod('post')){
+            $newjob = Job::find($id);
+            $newjob->job_name = $request->input('name');
+            $newjob->job_descrip = $request->input('descrip');
+            $newjob->save();
+            return redirect("admindashord.view_jobs");
+        }else{
+        $job =Job::find($id);
+        $arr = Array('job'=>$job);
+        return view('admindashord.edit',$arr);
+        }
     }
 }
 ?>

@@ -7,7 +7,7 @@ use App\Http\Controllers\protfileDashController;
 use App\Http\Controllers\QualificationDashController;
 use App\Http\Controllers\skillsDashController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Job;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,4 +40,13 @@ Route::get('/qual',[QualificationDashController::class,'qualifica'])->name('qual
 Route::get('/skills',[skillsDashController::class,'skill'])->name('skills');
 Route::get('/view_jobs',[JobController::class,'viewJobs']);
 Route::get('/job_add',[JobController::class,'addJobs']);
-Route::post('/job_add',[JobController::class,'addJobs']);
+
+Route::get('/edit/{id}',[JobController::class,'editJobs']);
+Route::post('/edit/{id}',[JobController::class,'editJobs']);
+
+    Route::get('add/{id}',function($id){
+        $job = Job::find($id);
+        $job->delete();
+        return redirect("view_jobs");
+    });
+

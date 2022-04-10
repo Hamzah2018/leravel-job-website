@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('jobs', function (Blueprint $table) {
-            $table->autoIncrement('id');
+            $table->id();
             $table->string('job_name');
             $table->string('job_descrip');
             $table->timestamps();
