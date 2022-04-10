@@ -16,10 +16,14 @@ class JobController extends Controller
 
         if($request->isMethod('post')){
                 // ش  echo $request;
+                // $this->validate($request,[
+                //     'name'=>'required|max:25|unique:jobs',
+                //     'descrip'=>'required|min:5|max80'
+                // ]);
             $newjob = new Job();
             // $newjob->job_name->$request->input('name');
-            $newjob->job_name = $request->input('name');
-            $newjob->job_descrip = $request->input('descrip');
+            $newjob->job_name = $request->input('job_name');
+            $newjob->job_descrip = $request->input('job_descrip');
             $newjob->save();
             // job_name
         }
@@ -30,10 +34,10 @@ class JobController extends Controller
     public function editJobs(Request $request,$id){
         if($request->isMethod('post')){
             $newjob = Job::find($id);
-            $newjob->job_name = $request->input('name');
-            $newjob->job_descrip = $request->input('descrip');
+            $newjob->job_name = $request->input('job_name');
+            $newjob->job_descrip = $request->input('job_descrip');
             $newjob->save();
-            return redirect("admindashord.view_jobs");
+            return redirect("view_jobs");
         }else{
         $job =Job::find($id);
         $arr = Array('job'=>$job);
