@@ -1,13 +1,27 @@
 @extends('layout.masterdmin');
 @section('content')
+@if(count($errors) > 0)
+  <div class="alert alert-danger">
+     <ul>
+        @foreach ($errors->all() as $error)
+             <li>{{ $error }}</li>
+         @endforeach
+       </ul>
+     </div>
+  @endif
 <form action="/job_add" method="POST" class="m-5">
     @csrf
     {{-- {{ csrf_field()}} --}}
     {{-- (''); --}}
     {{-- $newjob-> = $request->input('job_descrip'); --}}
-    job name :<input class="form-control" type="text" name="job_name">
+
+<div class = "form-group{{ $errors->has('job_name') ? 'has-error' :''}}">
+    job name :<input class="form-control" value="{{ Request::old('job_name') }}" type="text" name="job_name">
+</div>
 </br>
- job descrip :<input class="form-control" type="text" name="job_descrip">
+<div class = "form-group{{ $errors->has('job_name') ? 'has-error' :''}}">
+ job descrip :<input class="form-control" type="text" value="{{ Request::old('job_descrip') }}"  name="job_descrip">
+</div>
 </br>
  <input type="submit" class = "btn btn-primary" value="Add job">
 

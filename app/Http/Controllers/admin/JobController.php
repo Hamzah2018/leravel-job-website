@@ -16,10 +16,10 @@ class JobController extends Controller
 
         if($request->isMethod('post')){
                 // ش  echo $request;
-                // $this->validate($request,[
-                //     'name'=>'required|max:25|unique:jobs',
-                //     'descrip'=>'required|min:5|max80'
-                // ]);
+                $this->validate($request,[
+                    'job_name'=>'required|max:25|unique:jobs',
+                    'job_descrip'=>'required|min:5|max:80'
+                ]);
             $newjob = new Job();
             // $newjob->job_name->$request->input('name');
             $newjob->job_name = $request->input('job_name');
