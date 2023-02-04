@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -39,4 +39,4 @@
 </body>
 <script src="assests/js/template .js"></script>
 <script src="assests/lib/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
-</html>
+</html> --}}
