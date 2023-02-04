@@ -34,7 +34,7 @@ Route::get('/jobslist', function () {
 //     return view('home');
 // });             //homeController
 Route::get('/home',[homeController::class,'homef'])->name('home');
-Route::get('/job',[jobsController::class,'jobs'])->name('job');
+Route::get('/job',[jobsController::class,'viewJob'])->name('job');
 Route::get('/protfile',[protfileDashController::class,'protfile'])->name('protfile');
 Route::get('/qual',[QualificationDashController::class,'qualifica'])->name('qual');
 Route::get('/skills',[skillsDashController::class,'skill'])->name('skills');
